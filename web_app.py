@@ -14,13 +14,13 @@ import pickle
 
 # loading the dataset package
 
-movies = pickle.load(open('C:/Users/J.B.pradeep kumar/Documents/Machine Learing/Deployment/Movie Recommandations/movies.pkl','rb'))
+movies = pickle.load(open('movie.pkl','rb'))
 
 # loading the trained model
 
-loaded_model = pickle.load(open('C:/Users/J.B.pradeep kumar/Documents/Machine Learing/Deployment/Movie Recommandations/trained_pkl_movie_model.pkl','rb'))
+loaded_model = pickle.load(open('trained_pkl_movie_model.pkl','rb'))
 
-# list of all movie sin the package
+# list of all movies in the package
 
 list_of_movies = movies['title'].tolist()
 
@@ -59,15 +59,15 @@ def main():
     
     # giving a title 
     
-    st.title = ('Movie Recommandation Syatem')
+    st.title ('Movie Recommendation System')
     
     # getting the movie name from the user
     
-    option = st.selectbox('Hoe wuld you like to be contactes',list_of_movies)
+    option = st.selectbox('Select an movie for similar movie suggestion',list_of_movies)
     
     # Creating a butto n for selection
     
-    if st.button('Recommend'):
+    if st.button('Submit'):
         recommend =suggestion(option)
         
         for i in recommend:
